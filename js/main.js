@@ -3,6 +3,9 @@ var currentOutput = defaultVal;
 var tmpExpression = [];
 var isPreviousSignEquality = false;
 
+var numBtns = document.getElementsByClassName('calc-btn-num');
+var operatorBtns = document.getElementsByClassName('calc-btn-operator');
+
 var clickHandlers = {
 	/**
 	* AC handler
@@ -28,7 +31,7 @@ var clickHandlers = {
 
 			helpers.updateHtml();
 		}
-		
+
 		isPreviousSignEquality = false;
 	},
 
@@ -50,6 +53,18 @@ var clickHandlers = {
 		isPreviousSignEquality = true;
 
 		helpers.updateHtml();
+	},
+
+	backspace: function () {
+		// tmpExpression.pop();
+		// currentOutput = tmpExpression.join('');
+		// helpers.updateHtml();
+
+		for (var j = 0; j < tmpExpression.length; j++) {
+			tmpExpression.pop();
+			currentOutput = tmpExpression.join('');
+			helpers.updateHtml();
+		}
 	}
 };
 
@@ -76,15 +91,17 @@ var helpers = {
 * Add eventListener for numbers
 */
 (function addListeners() {
-	for (var i = 0; i < document.getElementsByClassName('calc-btn-num').length; i++) {
-		document.getElementsByClassName('calc-btn-num')[i].addEventListener('click', clickHandlers.number);
+	for (var i = 0; i < numBtns.length; i++) {
+		numBtns[i].addEventListener('click', clickHandlers.number);
 	}
 
-	for (var i = 0; i < document.getElementsByClassName('calc-btn-operator').length; i++) {
-		document.getElementsByClassName('calc-btn-operator')[i].addEventListener('click', clickHandlers.operator);
+	for (var i = 0; i < operatorBtns.length; i++) {
+		operatorBtns[i].addEventListener('click', clickHandlers.operator);
 	}
 
 	document.getElementById('calc-clear').addEventListener('click', clickHandlers.ac);
 
 	document.getElementById('calc-equals').addEventListener('click', clickHandlers.equality);
+
+	document.getElementById('calc-backspace').addEventListener('click', clickHandlers.backspace);
 }());
