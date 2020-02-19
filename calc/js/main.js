@@ -45,7 +45,7 @@ var clickHandlers = {
 	* Handle click on equality button
 	*/
 	equality: function () {
-		currentOutput = eval(tmpExpression.join(''));
+		currentOutput = helpers.calculate();
 		tmpExpression = [currentOutput];
 		isPreviousSignEquality = true;
 
@@ -69,6 +69,12 @@ var helpers = {
 		currentOutput = tmpExpression.join('');
 
 		this.updateHtml();
+	},
+
+	calculate: function () {
+		var a = new Function('calcStr', 'return calcStr');
+		console.log(typeof tmpExpression.join(''));
+		return a('1+6');
 	}
 };
 
@@ -85,6 +91,5 @@ var helpers = {
 	}
 
 	document.getElementById('calc-clear').addEventListener('click', clickHandlers.ac);
-
 	document.getElementById('calc-equals').addEventListener('click', clickHandlers.equality);
 }());

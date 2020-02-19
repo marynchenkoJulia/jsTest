@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather</title>
+	<link media="all" rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="wrapper">
+		<main id="main">
+			<div class="container">
+				<h1>Weather list:</h1>
+
+				<div class="weather-wrapper">
+					<div class="options">
+						<div class="structure">
+							<a href="#" class="structure-icon block-structure active">
+								<img src="images/blocks.svg" alt="blocks">
+							</a>
+							<a href="#" class="structure-icon list-structure">
+								<img src="images/list.svg" alt="list">
+							</a>
+						</div>
+						<div class="filters">
+							<a href="#" class="filters-button alphabet">
+								<img src="images/a-z.svg" alt="a-z">
+							</a>
+							<a href="#" class="filters-button up">
+								<img src="images/up-arrow.svg" alt="up">
+							</a>
+							<a href="#" class="filters-button down">
+								<img src="images/down-arrow.svg" alt="down">
+							</a>
+						</div>
+					</div>
+
+					<div class="weather-box-holder"> <!-- add class "list-view" or "block-view" -->
+						<div class="weather-box clickable" data-city="Kharkiv">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="New York">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Paris">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="London">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Milan">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Madrid">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Oslo">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Rome">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Dubai">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+
+						<div class="weather-box clickable" data-city="Kiev">
+							<h3 class="city">Click here</h3>
+							<span class="temperature"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
